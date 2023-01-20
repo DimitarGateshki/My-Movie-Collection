@@ -44,19 +44,7 @@ public class CategoryToMovieDAO {
     }
 
 
-    public static void removeCategoryToMovie(int catID,int movId) throws SQLException{
-        //Creating dbConnector instance
-        DatabaseConnector dbConnector = new DatabaseConnector();
-        try(Connection connection = dbConnector.getConnection()) {
-            String sql = "Delete FROM CategoryToMovie where CategoryID=" + catID + "and MovieID="+movId+';';
-            System.out.println(sql);
-            Statement statement = connection.createStatement();
-            if(statement.execute(sql)){
-                ResultSet resultSet = statement.getResultSet();
-                System.out.println("Removed correctly");
-            }
-        }
-    }
+   
 
     public static void postNewCategoryToMovie(CategoryToMovie categoryToMovie) throws SQLException{
         DatabaseConnector dbConnector = new DatabaseConnector();
